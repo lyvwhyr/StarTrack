@@ -9,7 +9,7 @@ interface IStSearch extends ng.IScope {
   playTrack(track: StTrack);
 }
 
-function stSearchController($scope: IStSearch, SpotifyPlayer: SpotifyPlayer, QueueService: QueueService, SpotifyWeb: SpotifyWeb, lodash: lodash) {
+function stSearchController($scope: IStSearch, SpotifyPlayer: SpotifyPlayer, QueueService: QueueService, SpotifyWeb: SpotifyWeb, lodash: lodash, $log: ng.ILogService) {
 
   $scope.$watch('searchQuery', lodash.debounce(onSeach, 450, {'trailing': true}));
   $scope.addTrackToQueue = addTrackToQueue;
@@ -31,10 +31,10 @@ function stSearchController($scope: IStSearch, SpotifyPlayer: SpotifyPlayer, Que
       $scope.searchActive = true;
       SpotifyWeb.searchTrack(query)
           .then(function(v: Array<StTrack>) {
-            console.log(v);
+            $log.debug(v);
             if (v && v.length > 0) {
               $scope.searchResults = v;
-              console.log($scope.searchResults);
+              $log.debug($scope.searchResults);
             }
         });
     }

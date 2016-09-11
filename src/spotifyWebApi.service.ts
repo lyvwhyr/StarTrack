@@ -7,10 +7,11 @@ class SpotifyWeb {
   private searchTypes: Array<string>;
   private _: any;
   private tag: string;
+  private log: any;
   // dependencies would be injected here
-  constructor(Spotify: Spotify, localStorageService: localStorageService, lodash: lodash) {
+  constructor($log: ng.ILogService, Spotify: Spotify, localStorageService: localStorageService, lodash: lodash) {
     this.tag = 'SpotifyWeb: ';
-
+    this.log = $log.debug;
     this._ = lodash;
     this.spotify = Spotify;
     this.searchLimit = 20;
@@ -19,9 +20,9 @@ class SpotifyWeb {
     this.searchTypes = ['track'];
     this.token = localStorageService.get('spotify-token');
     if (this.token) {
-      console.log('SpotifyWeb: constructor: service started');
+      this.log('SpotifyWeb: constructor: service started');
     } else {
-      console.log('SpotifyWeb: constructor: token unavailble');
+      this.log('SpotifyWeb: constructor: token unavailble');
     }
   }
 
@@ -32,10 +33,10 @@ class SpotifyWeb {
           console.log('SpotifyWeb: search: data from search query');
           let results: Array<StTrack> = [];
           this._.each(data.tracks.items, function(v: any) {
-            // console.log(v);
+            // this.log(v);
             results.push(new StTrack(v));
           });
-          // console.log(data.tracks.items);
+          // this.log(data.tracks.items);
           return results;
         })
         .catch(function (e: Error) {
@@ -61,9 +62,6 @@ class SpotifyWeb {
         });
   }
 
-  log(logEntry: string) {
-    console.log(this.tag + logEntry);
-  }
 }
 
 

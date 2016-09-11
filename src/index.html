@@ -25,7 +25,13 @@
 
 
   <body>
-    <message-view></message-view>
+    <message-view ng-controller="stChatController">
+      <div class="chat-list" >
+        <div class="message-item" ng-repeat="msg in messages">
+            {{msg.content}}
+        </div>
+      </div>
+    </message-view>
 
     <st-search-view ng-controller="stSearchController">
       <div class="track-search-bar" >
@@ -36,24 +42,24 @@
             ng-blur="searchActive = false;searchQuery = '';searchResults = [];">
         <i class="material-icons">search</i>
         <!--<i class="material-icons" id="find_me_button">my_location</i>-->
-    </div>
+      </div>
 
-    <div ng-class="{'track-search-results-container': !searchActive, 'track-search-results-container active': searchActive}">
-        <div id="track-result-list" ng-repeat="track in searchResults">
-          <div class="list-item"
-              ng-click="playTrack(track);">
-              <img ng-src="{{track.albumCoverSm}}" class="track-cover" />
-              <div class="track-data">
-                <div class="artist">
-                  {{track.artist}}
+      <div ng-class="{'track-search-results-container': !searchActive, 'track-search-results-container active': searchActive}">
+          <div id="track-result-list" ng-repeat="track in searchResults">
+            <div class="list-item"
+                ng-click="playTrack(track);">
+                <img ng-src="{{track.albumCoverSm}}" class="track-cover" />
+                <div class="track-data">
+                  <div class="artist">
+                    {{track.artist}}
+                  </div>
+                  <div class="title">
+                    {{track.title}}
+                  </div>
                 </div>
-                <div class="title">
-                  {{track.title}}
-                </div>
-              </div>
+            </div>
           </div>
-        </div>
-    </div>
+      </div>
     </st-search-view>
 
     <st-player ng-controller="stPlayerController">
@@ -64,10 +70,15 @@
       
     </st-player>
 
-    <message-bar ng-controller="stMessageController">
+    <form class="message-bar" ng-controller="stMessageController" ng-submit="sendMessage()">
       <input class="content" ng-model="messageInput">
-      <div class="send-button" ng-click="sendMessage()" ng-if="textInput"></div>
-    </message-bar>
+      <div class="send-button" ng-click="sendMessage()" ng-if="textInput">
+          <i class="material-icons">send</i>
+      </div>
+      <div class="attach-button" ng-if="!textInput">
+        <i class="material-icons">attachment</i>
+      </div>
+    </form>
 
   </body>
 

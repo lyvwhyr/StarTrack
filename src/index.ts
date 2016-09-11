@@ -2,14 +2,14 @@
 
 const appName: string = 'starTrack';
 
-const firebaseConfig: firebaseConfig = {
+const firebaseConfig: Object = {
   apiKey: 'AIzaSyAx2Ue674tIIQiDTfzQ95uIRHZqn142xUk',
   authDomain: 'startrack-6bdbb.firebaseapp.com',
   databaseURL: 'https://startrack-6bdbb.firebaseio.com',
   storageBucket: 'startrack-6bdbb.appspot.com'
 };
 
-function runBlock($log: any) {
+function runBlock($log: ng.ILogService) {
   $log.debug('runBlock end');
 }
 

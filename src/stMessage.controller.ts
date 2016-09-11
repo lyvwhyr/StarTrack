@@ -13,10 +13,9 @@ function stMessageController($scope: IStMessageController, ChatService: ChatServ
   $scope.textInput = false;
   $scope.messageInput = '';
   $scope.sendMessage = sendMessage;
-  $scope.messages = [];
 
   function sendMessage() {
-    let message: IStMessage = {};
+    let message: any = {};
     message.content = $scope.messageInput;
     message.createdAt = new Date();
     message.roomId = 'od23uuKv7pAR1VjD';

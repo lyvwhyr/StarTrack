@@ -10,7 +10,7 @@ class SpotifyPlayer {
   private tag: string;
   private log: any;
   // dependencies would be injected here
-  constructor($log: any, $window: ng.IWindowService, $rootScope: ng.IRootScopeService) {
+  constructor($log: ng.ILogService, $window: ng.IWindowService, $rootScope: ng.IRootScopeService) {
     this.rootScope = $rootScope;
     this.mp3Player = $window.audioPlayer;
     this.tag = 'SpotifyPlayer: ';
