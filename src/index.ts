@@ -70,6 +70,7 @@ class StTrack {
   uri: string;
   title: string;
   artist: string;
+  explicit: boolean;
   album: string;
   albumCover: string;
   albumCoverSm: string;
@@ -153,7 +154,3 @@ angular.element(document).ready(function () {
     angular.bootstrap(document.body, [appName]);
   });
 
-
-
-
-  

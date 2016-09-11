@@ -3,12 +3,11 @@
 interface IStMessageController extends ng.IScope {
   messageInput: string;
   textInput: boolean;
-  messages: Array<StMessage>;
 
   sendMessage();
 }
 
-function stMessageController($scope: IStMessageController) {
+function stMessageController($scope: IStMessageController, ChatService: ChatService) {
 
   $scope.$watch('messageInput', onInput);
   $scope.textInput = false;
@@ -17,18 +16,19 @@ function stMessageController($scope: IStMessageController) {
   $scope.messages = [];
 
   function sendMessage() {
-    let message: IStMessage;
+    let message: IStMessage = {};
     message.content = $scope.messageInput;
     message.createdAt = new Date();
     message.roomId = 'od23uuKv7pAR1VjD';
     let newMessage = new StMessage(message);
-    $scope.messages.push(newMessage);
+    ChatService.add(newMessage);
     $scope.messageInput = '';
   }
 
   function onInput(input: string) {
     if (input && input.length > 0) {
       $scope.textInput = true;
+      $scope.messageInput = input;
     } else {
        $scope.textInput = false;
     }

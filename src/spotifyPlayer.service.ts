@@ -8,11 +8,13 @@ class SpotifyPlayer {
   private mp3Player: any;
 
   private tag: string;
+  private log: any;
   // dependencies would be injected here
-  constructor($window: ng.IWindowService, $rootScope: ng.IRootScopeService) {
+  constructor($log: any, $window: ng.IWindowService, $rootScope: ng.IRootScopeService) {
     this.rootScope = $rootScope;
     this.mp3Player = $window.audioPlayer;
     this.tag = 'SpotifyPlayer: ';
+    this.log = $log.debug;
     this.enabled = true;
     try {
       this.spotify = $window.plugins.spotify;
@@ -67,10 +69,6 @@ class SpotifyPlayer {
     this.log('SpotifyPlayer: resumed track ' + this.currentTrack.uri);
   }
 
-  log(logEntry: string) {
-    console.log(this.tag + logEntry);
-  }
-  
 }
 
 starTrack.service('SpotifyPlayer', SpotifyPlayer);

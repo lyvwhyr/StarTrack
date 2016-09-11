@@ -30,7 +30,8 @@
     <st-search-view ng-controller="stSearchController">
       <div class="track-search-bar" >
         <i class="material-icons" ng-click="openMenu()">menu</i>
-        <input type="search" placeholder="Search for song"
+        <input type="search" 
+            placeholder="Search for song"
             ng-model="searchQuery"
             ng-blur="searchActive = false;searchQuery = '';searchResults = [];">
         <i class="material-icons">search</i>
@@ -43,7 +44,12 @@
               ng-click="playTrack(track);">
               <img ng-src="{{track.albumCoverSm}}" class="track-cover" />
               <div class="track-data">
-                <b>{{track.artist}}</b> - {{track.title}}
+                <div class="artist">
+                  {{track.artist}}
+                </div>
+                <div class="title">
+                  {{track.title}}
+                </div>
               </div>
           </div>
         </div>
@@ -59,9 +65,8 @@
     </st-player>
 
     <message-bar ng-controller="stMessageController">
-      </div>
       <input class="content" ng-model="messageInput">
-      </div>
+      <div class="send-button" ng-click="sendMessage()" ng-if="textInput"></div>
     </message-bar>
 
   </body>
