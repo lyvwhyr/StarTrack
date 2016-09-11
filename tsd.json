@@ -1,0 +1,39 @@
+{
+  "version": "v4",
+  "repo": "borisyankov/DefinitelyTyped",
+  "ref": "master",
+  "path": "typings",
+  "bundle": "typings/tsd.d.ts",
+  "installed": {
+    "lodash/lodash.d.ts": {
+      "commit": "17795ae18fc214be862fe578ad48c28fecfef8a6"
+    },
+    "moment/moment.d.ts": {
+      "commit": "17795ae18fc214be862fe578ad48c28fecfef8a6"
+    },
+    "angular-local-storage/angular-local-storage.d.ts": {
+      "commit": "17795ae18fc214be862fe578ad48c28fecfef8a6"
+    },
+    "angularjs/angular.d.ts": {
+      "commit": "17795ae18fc214be862fe578ad48c28fecfef8a6"
+    },
+    "jquery/jquery.d.ts": {
+      "commit": "17795ae18fc214be862fe578ad48c28fecfef8a6"
+    },
+    "angular-ui-router/angular-ui-router.d.ts": {
+      "commit": "17795ae18fc214be862fe578ad48c28fecfef8a6"
+    },
+    "angularjs/angular-mocks.d.ts": {
+      "commit": "17795ae18fc214be862fe578ad48c28fecfef8a6"
+    },
+    "jasmine/jasmine.d.ts": {
+      "commit": "17795ae18fc214be862fe578ad48c28fecfef8a6"
+    },
+    "es6-shim/es6-shim.d.ts": {
+      "commit": "17795ae18fc214be862fe578ad48c28fecfef8a6"
+    },
+    "firebase/firebase.d.ts": {
+      "commit": "0c5c7a2d2bd0ce7dcab963a8402a9042749ca2da"
+    }
+  }
+}

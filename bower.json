@@ -1,0 +1,27 @@
+{
+  "name": "fountain-inject",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-ui-router": "^0.3.1",
+    "todomvc-app-css": "^2.0.4",
+    "angular-material": "^1.1.1",
+    "lodash": "^4.15.0",
+    "angular-spotify": "^1.4.2",
+    "moment": "^2.14.1",
+    "angular-local-storage": "^0.5.0",
+    "angular-mocks": "^1.5.8",
+    "angular-lodash": "^0.1.2",
+    "ng-lodash": "^0.5.0",
+    "material-design-icons": "^3.0.1",
+    "firebase": "^3.3.2"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.5.0"
+  },
+  "overrides": {
+    "todomvc-app-css": {
+      "main": "index.css"
+    }
+  }
+}
