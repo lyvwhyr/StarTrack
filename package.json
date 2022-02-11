@@ -23,7 +23,7 @@
     "gulp-stylus": "^2.4.0",
     "browser-sync": "^2.9.11",
     "browser-sync-spa": "^1.0.3",
-    "karma": "^0.13.14",
+    "karma": "^6.3.14",
     "karma-coverage": "^0.5.3",
     "karma-junit-reporter": "^0.4.2",
     "jasmine": "^2.4.1",
